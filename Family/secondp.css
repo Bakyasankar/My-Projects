@@ -1,0 +1,134 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@1,100&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+
+}
+img{
+    display: block;
+    min-width: 100%;
+    height:auto;
+    size: 50%;
+    border-radius: 20px;
+    
+}
+body{
+    font: 1.5rem;
+    min-height: 100vh;
+    background-color :#475569;
+    background-image: radial-gradient(whitesmoke,#475569);
+    /* display: flex;
+    flex-direction: column; */
+    font-size: 1.5rem;
+}
+header,footer{
+    position: sticky;
+    background-color: #1e293b;
+    color: whitesmoke;
+    text-align: center;
+}
+header{
+    top: 0;
+}
+footer{
+    bottom: 0;
+}
+html{
+    scroll-behavior: smooth;
+}
+nav{
+    background-color: white;
+    padding:0.5rem;
+    border-bottom: 2px solid black;
+    font-weight: bolder;
+    display: flex;
+    justify-content: space-evenly;
+    font-size: 1.5rem;
+}
+nav a,    /*nav a:any-link  before and after same color shown*/
+nav a:visited{
+    color:#000;
+}
+ nav a:hover, nav a:focus{   /*nav a:active */
+    color: hsla(0, 0%, 20%, 0.593);
+}
+nav a:active{
+    color: red;
+}
+main{
+    flex-grow: 1;
+    display: flex;
+    flex-direction:column;
+    align-items:center;
+    gap: 1.5rem;
+    padding: 1rem;
+}
+.card{
+    /* scroll-margin-top: 8rem; */
+    width: min(100%,359px);
+    background-color: rgba(128, 128, 128, 0.852);
+    border: 2px solid #000000af;
+    border-radius: 25px;
+    padding: 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+.card img{
+    border: 5px double #333;
+    border-radius: 50%;
+    width: 25%;
+    height: auto;
+}
+.card figcaption{
+    font-weight: bolder;
+    font-size: 2rem;
+    margin: 1rem;
+}
+.card img:not([alt]){
+    border: 2px solid white;
+
+}
+.card:target{
+    border: 10px double black;
+}
+.card figcaption::after{
+    content:'....';
+}
+@media screen and (min-width:576px){
+    main{
+        justify-content: center;
+        flex-flow: row wrap;
+        padding: 1rem;
+    }
+    .card{
+        width: min(100%,400px);
+    }
+    .card:last-child{
+     order: -1;
+    }
+}
+
+@media screen and (min-width:768px){
+    nav{
+        display: none;
+    }
+    .card{
+        width: min(100%,320px);
+    }
+    .card img{
+        flex-flow: column-reverse;
+    } 
+}
+ @media screen and (min-width:1220px){
+    .card{
+        width: min(33%-1rem,400px);
+    }
+}
+@media screen  and (max-height:435px)
+ and (min-aspect-ratio:7/4){
+    
+} 
